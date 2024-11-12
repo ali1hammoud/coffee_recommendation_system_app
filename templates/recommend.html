@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="mb-4">Get Your Coffee Recommendation</h2>
+<form method="POST" action="{{ url_for('recommend') }}">
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="color" class="form-label">Color:</label>
+            <select class="form-select" id="color" name="color" required>
+                <option value="" selected disabled>Choose color</option>
+                <option value="Light">Light</option>
+                <option value="Medium">Medium</option>
+                <option value="Dark">Dark</option>
+            </select>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="roast_level" class="form-label">Roast Level:</label>
+            <select class="form-select" id="roast_level" name="roast_level" required>
+                <option value="" selected disabled>Choose roast level</option>
+                <option value="Light Roast">Light Roast</option>
+                <option value="Medium Roast">Medium Roast</option>
+                <option value="Dark Roast">Dark Roast</option>
+            </select>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="flavor_profile" class="form-label">Flavor Profile:</label>
+        <select class="form-select" id="flavor_profile" name="flavor_profile" required>
+            <option value="" selected disabled>Choose a flavor profile</option>
+            <option value="Fruity, Floral">Fruity, Floral</option>
+            <option value="Nutty, Chocolate">Nutty, Chocolate</option>
+            <option value="Bitter, Smoky">Bitter, Smoky</option>
+            <option value="Spicy, Chocolate">Spicy, Chocolate</option>
+            <option value="Berry, Winey">Berry, Winey</option>
+            <option value="Smoky, Bold">Smoky, Bold</option>
+            <option value="Nutty, Sweet">Nutty, Sweet</option>
+            <option value="Earthy, Bold">Earthy, Bold</option>
+            <option value="Citrus, Bright">Citrus, Bright</option>
+            <option value="Sweet, Smooth">Sweet, Smooth</option>
+            <option value="Organic, Balanced">Organic, Balanced</option>
+            <option value="Sweet, Nutty">Sweet, Nutty</option>
+            <option value="Rich, Smooth">Rich, Smooth</option>
+            <option value="Spicy, Earthy">Spicy, Earthy</option>
+            <option value="Fruity, Sweet">Fruity, Sweet</option>
+            <option value="Unique, Floral">Unique, Floral</option>
+            <option value="Bright, Tangy">Bright, Tangy</option>
+            <option value="Heavy, Earthy">Heavy, Earthy</option>
+            <option value="Chocolate, Nutty">Chocolate, Nutty</option>
+            <option value="Strong, Bold">Strong, Bold</option>
+        </select>
+    </div>
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <label for="acidity" class="form-label">Acidity:</label>
+            <select class="form-select" id="acidity" name="acidity" required>
+                <option value="" selected disabled>Choose acidity</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="body" class="form-label">Body:</label>
+            <select class="form-select" id="body" name="body" required>
+                <option value="" selected disabled>Choose body</option>
+                <option value="Light">Light</option>
+                <option value="Medium">Medium</option>
+                <option value="Full">Full</option>
+            </select>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="caffeine" class="form-label">Caffeine Content (mg):</label>
+            <input type="number" class="form-control" id="caffeine" name="caffeine" placeholder="e.g., 150" required>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="origin" class="form-label">Preferred Origin:</label>
+        <select class="form-select" id="origin" name="origin" required>
+            <option value="" selected disabled>Choose an origin</option>
+            <option value="Ethiopia">Ethiopia</option>
+            <option value="Colombia">Colombia</option>
+            <option value="France">France</option>
+            <option value="Guatemala">Guatemala</option>
+            <option value="Kenya">Kenya</option>
+            <option value="Italy">Italy</option>
+            <option value="Brazil">Brazil</option>
+            <option value="Indonesia">Indonesia</option>
+            <option value="Costa Rica">Costa Rica</option>
+            <option value="Jamaica">Jamaica</option>
+            <option value="Peru">Peru</option>
+            <option value="Nicaragua">Nicaragua</option>
+            <option value="Hawaii">Hawaii</option>
+            <option value="Bolivia">Bolivia</option>
+            <option value="Panama">Panama</option>
+            <option value="Tanzania">Tanzania</option>
+            <option value="India">India</option>
+            <option value="Mexico">Mexico</option>
+            <option value="Vietnam">Vietnam</option>
+        </select>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="algorithm" class="form-label">Select Recommendation Algorithm:</label>
+            <select class="form-select" id="algorithm" name="algorithm" required>
+                <option value="" selected disabled>Choose an algorithm</option>
+                <option value="knn">K-Nearest Neighbors (KNN)</option>
+                <option value="rf">Random Forest</option>
+            </select>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="n_recommendation" class="form-label">Select number of Recommendation:</label>
+            <input type="number" class="form-control" id="n_recommendation" name="n_recommendation" placeholder="e.g., 1,2,...,5" required>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success">Get Recommendation</button>
+</form>
+
+{% if coffees %}
+    <h3 class="mt-5">Recommended Coffees for You:</h3>
+    <div class="row">
+        {% for coffee in coffees %}
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ coffee['Name'] }}</h5>
+                        <p class="card-text"><strong>Origin:</strong> {{ coffee['Origin'] }}</p>
+                        <p class="card-text"><strong>Flavor Profile:</strong> {{ coffee['Flavor Profile'] }}</p>
+                        <p class="card-text"><strong>Caffeine Content:</strong> {{ coffee['Caffeine Content (mg)'] }} mg</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+{% endblock %}

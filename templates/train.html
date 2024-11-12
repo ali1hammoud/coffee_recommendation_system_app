@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="mb-4">Train Your Coffee Recommendation Model</h2>
+<form method="POST" action="{{ url_for('train') }}">
+    <div class="mb-3">
+        <label for="algorithm" class="form-label">Select Algorithm:</label>
+        <select class="form-select" id="algorithm" name="algorithm" required>
+            <option value="" selected disabled>Choose an algorithm</option>
+            <option value="knn">K-Nearest Neighbors (KNN)</option>
+            <option value="rf">Random Forest</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Train and Save Model</button>
+</form>
+{% endblock %}

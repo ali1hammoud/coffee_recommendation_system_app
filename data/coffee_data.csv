@@ -1,0 +1,21 @@
+Coffee ID,Name,Color,Roast Level,Flavor Profile,Acidity,Body,Caffeine Content (mg),Origin
+1,Ethiopian Yirgacheffe,Light,Medium Roast,"Fruity, Floral",Medium,Medium,120,Ethiopia
+2,Colombian Supremo,Medium,Medium Roast,"Nutty, Chocolate",Medium,Medium,150,Colombia
+3,French Roast,Dark,Dark Roast,"Bitter, Smoky",Low,Full,180,France
+4,Guatemala Antigua,Medium,Medium Roast,"Spicy, Chocolate",Medium,Medium,130,Guatemala
+5,Kenyan AA,Dark,Dark Roast,"Berry, Winey",Low,Full,170,Kenya
+6,Italian Roast,Dark,Dark Roast,"Smoky, Bold",Low,Full,190,Italy
+7,Brazilian Santos,Medium,Medium Roast,"Nutty, Sweet",Medium,Medium,140,Brazil
+8,Sumatra Mandheling,Dark,Dark Roast,"Earthy, Bold",Low,Full,185,Indonesia
+9,Costa Rican Tarrazu,Medium,Medium Roast,"Citrus, Bright",High,High,125,Costa Rica
+10,Jamaican Blue Mountain,Medium,Medium Roast,"Sweet, Smooth",Medium,Medium,160,Jamaica
+11,Peruvian Organic,Medium,Medium Roast,"Organic, Balanced",Medium,Medium,135,Peru
+12,Nicaraguan Segovia,Medium,Medium Roast,"Sweet, Nutty",Medium,Medium,145,Nicaragua
+13,Hawaiian Kona,Medium,Medium Roast,"Rich, Smooth",Medium,Full,155,Hawaii
+14,Sulawesi Toraja,Dark,Dark Roast,"Spicy, Earthy",Low,Full,175,Indonesia
+15,Bolivian Caranavi,Medium,Medium Roast,"Fruity, Sweet",Medium,Medium,130,Bolivia
+16,Panama Geisha,Medium,Medium Roast,"Unique, Floral",Medium,Medium,150,Panama
+17,Tanzanian Peaberry,Dark,Dark Roast,"Bright, Tangy",High,Medium,140,Tanzania
+18,Indian Monsooned,Medium,Medium Roast,"Heavy, Earthy",Low,Full,165,India
+19,Mexican Altura,Medium,Medium Roast,"Chocolate, Nutty",Medium,Medium,135,Mexico
+20,Vietnamese Robusta,Dark,Dark Roast,"Strong, Bold",Low,Full,200,Vietnam

@@ -1,0 +1,42 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    background-color: #6f4e37; /* Coffee brown */
+}
+
+.footer {
+    background-color: #6f4e37;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: #8b5e3c; /* Darker coffee brown */
+    border-color: #8b5e3c;
+}
+
+.btn-success {
+    background-color: #a0522d; /* Sienna */
+    border-color: #a0522d;
+}
+
+.btn-primary:hover {
+    background-color: #7a4e30;
+    border-color: #7a4e30;
+}
+
+.btn-success:hover {
+    background-color: #933b27;
+    border-color: #933b27;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
